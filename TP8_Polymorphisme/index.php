@@ -14,4 +14,3 @@ $listeFormes = [$cercle, $rectangle, $triangle];
 $calculAireTotale = new CalculateurAire();
 
 $calculAireTotale->calculeAireTotale($listeFormes);
-$calculAireTotale->afficherAires($listeFormes);

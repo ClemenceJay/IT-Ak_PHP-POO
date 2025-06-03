@@ -1,7 +1,8 @@
 <?php
 
 class CalculateurAire {
-    public function calculeAireTotale($listeForme) {
+    public function calculeAireTotale($listeForme) : float {
+        $this->afficherAires($listeForme);
         $aireTotale = 0;
         foreach ($listeForme as $forme) {
             $aireTotale += $forme->calculerAire();
@@ -10,7 +11,7 @@ class CalculateurAire {
         return $aireTotale;
     }
 
-    public function afficherAires($listeForme) {
+    public function afficherAires($listeForme) : void {
         foreach ($listeForme as $forme) {
             echo "L'aire de ce ".$forme->typeForme." est de ".$forme->calculerAire()." cm2. <br>";
         }
