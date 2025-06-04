@@ -26,12 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimer'])) {
     $tacheController->supprimerTache($_POST['nom']);
     $_SESSION['taches'] = $tacheController->getTache();
 }
-
-//Interface HTML
-echo "<h3> Mes taches </h3>";
-$tacheVue->afficherTaches($tacheController);
-
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes tâches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h3> Mes taches </h3>
+<?=$tacheVue->afficherTaches($tacheController);?>
 
 <h3> Ajouter une tache </h3>
 <form method="POST">
@@ -51,5 +57,3 @@ $tacheVue->afficherTaches($tacheController);
     </select>
     <button type="submit" name="supprimer">Supprimer</button>
 </form>
-
-<!--$tacheController->supprimerTache("Courses");-->
