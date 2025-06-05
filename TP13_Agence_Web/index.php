@@ -61,7 +61,7 @@ echo "L'avancement du projet est de : ".$projet1->getProgress()."%. <br>";
 
 //calcul des taches de dev sur le projet:
 $totalCost = 0;
-foreach ($projet1->tasks as $task) {
+foreach ($projet1->getTasks() as $task) {
     if  ($task->isCompleted && method_exists($task, "calculateCost")) {
         $totalCost += $task->calculateCost();
     }

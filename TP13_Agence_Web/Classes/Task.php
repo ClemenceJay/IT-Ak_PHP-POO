@@ -3,7 +3,7 @@ require_once ("Exceptions/TaskAlreadyCompletedException.php");
 
 abstract class Task {
     private int $id;
-    public string $title;
+    private string $title;
     private Developer $assignedTo;
     public bool $isCompleted = false;
 
@@ -12,6 +12,10 @@ abstract class Task {
         $this->id = $id;
         $this->title = $title;
         $this->assignedTo = $assignedTo;
+    }
+
+    public function getTitle(): string {
+        return $this->title;
     }
 
     public function completeTask(){

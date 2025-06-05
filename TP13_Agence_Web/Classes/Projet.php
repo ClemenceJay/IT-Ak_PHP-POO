@@ -5,7 +5,7 @@ class Projet {
     private string $clientName;
     private DateTime $startDate;
     private ?DateTime $endDate = null;
-    public array $tasks;
+    private array $tasks;
 
     public function __construct(int $id, string $nom, string $clientName) {
         $this->id = $id;
@@ -16,6 +16,10 @@ class Projet {
 
     public function addTask(Task $task) {
         $this->tasks[] = $task;
+    }
+
+    public function getTasks(): array {
+        return $this->tasks;
     }
 
     public function getProgress(): float {
