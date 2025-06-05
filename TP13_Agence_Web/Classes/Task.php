@@ -1,4 +1,5 @@
 <?php
+require_once ("Exceptions/TaskAlreadyCompletedException.php");
 
 abstract class Task {
     private int $id;
@@ -15,7 +16,7 @@ abstract class Task {
 
     public function completeTask(){
         if($this->isCompleted){
-            throw new Exception("Cette tâche est déjà terminée");
+            throw new TaskAlreadyCompletedException();
         }
         echo "<br> La tache ".$this->title." est terminée.<br>";
         $this->isCompleted = true;

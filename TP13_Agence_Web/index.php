@@ -1,9 +1,9 @@
 <?php
 
-require_once ("Projet.php");
-require_once ("DevelopmentTask.php");
-require_once ("DesignTask.php");
-require_once ("Developer.php");
+require_once ("Classes/Projet.php");
+require_once ("Classes/DevelopmentTask.php");
+require_once ("Classes/DesignTask.php");
+require_once ("Classes/Developer.php");
 
 //Création projets
 $projet1 =  new Projet(1, "Site Web Toilettage", "Bulle de poils");
@@ -46,6 +46,7 @@ echo "Actuellement ".$andy->getName()." a ".$andy->getWorkload()." taches en cou
 echo "Actuellement ".$mathilde->getName()." a ".$mathilde->getWorkload()." taches en cours. <br>";
 echo "L'avancement du projet est de : ".$projet1->getProgress()."%. <br>";
 
+//Cas d'une tache deja complétée (déclenchement de l'exception) :
 //$task2->completeTask();
 
 $task3->completeTask();
