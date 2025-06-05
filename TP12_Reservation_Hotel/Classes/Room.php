@@ -1,5 +1,7 @@
 <?php
 require_once ("Reservation.php");
+require_once ("Exceptions/ReservationConflictException.php");
+
 class Room {
     public int $id;
     public string $number;
@@ -32,7 +34,7 @@ class Room {
             echo "La reservation a bien été enregistrée <br>";
         } else {
             $newReservation->cancel();
-            throw new Exception("La reservation n'est pas possible à ces dates <br>");
+            throw new ReservationConflictException();
         }
     }
     public function getReservation() : array {

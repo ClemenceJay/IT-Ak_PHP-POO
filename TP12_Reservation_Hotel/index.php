@@ -1,7 +1,7 @@
 <?php
-require_once ("Room.php");
-require_once ("Reservation.php");
-require_once ("Customer.php");
+require_once ("Classes/Room.php");
+require_once ("Classes/Reservation.php");
+require_once ("Classes/Customer.php");
 
 //Chambres
 $chambre1 = new Room(1,001,"Simple", 65);

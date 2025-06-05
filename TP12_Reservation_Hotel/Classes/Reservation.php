@@ -1,5 +1,5 @@
 <?php
-require_once ("Billable.php");
+require_once ("Interfaces/Billable.php");
 class Reservation implements Billable {
     public int $id;
     public Room $room;
