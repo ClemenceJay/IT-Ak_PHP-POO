@@ -50,9 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php
             if (isset($_GET['chien'])) {
                 $nom = $_GET['chien'];
-                echo "<p> Les infos de ".$nom." :</p>";
                 foreach ($chienController->getChiens() as $chien) {
                     if ($chien->getNom() === $nom) {
+                        echo "<p> Les infos de ".$nom." :</p>";
                         $chienController->afficherChiensDetails($chien);
                         break;
                     }
